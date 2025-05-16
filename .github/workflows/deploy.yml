@@ -26,7 +26,7 @@ jobs:
       - name: Prepare Deployment Package
         run: |
           mkdir -p .build
-          cp -r dist package.json .build/
+          cp -r dist package.json package-lock.json .build/
           cd .build
           npm ci --only=production
           zip -r ../lambda-package.zip .
