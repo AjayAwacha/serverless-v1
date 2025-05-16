@@ -1,0 +1,24 @@
+service: ts-serverless-manual
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-south-1
+
+functions:
+  createUser:
+    handler: dist/user.createUser
+    events:
+      - http:
+          path: users
+          method: post
+
+  createProduct:
+    handler: dist/product.createProduct
+    events:
+      - http:
+          path: products
+          method: post
+
+plugins:
+  - serverless-offline

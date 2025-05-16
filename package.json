@@ -1,0 +1,21 @@
+{
+  "name": "multi-fun-with-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && serverless offline",
+    "invoke:createUser": "npm run build && serverless invoke local --function createUser --path test/test-events/createUser.json",
+    "invoke:createProduct": "npm run build && serverless invoke local --function createProduct --path test/test-events/createProduct.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "serverless": "^4.14.3",
+    "serverless-offline": "^14.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
